@@ -1,0 +1,19 @@
+meta {
+  name: Register
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{host}}/auth
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "test1@test.com",
+      "password": "12345678@Testa",
+      "name": "Jose Garcia"
+  }
+}
