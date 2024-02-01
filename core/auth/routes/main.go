@@ -9,7 +9,7 @@ import (
 func Setup(app *fiber.App, services *sharedApplication.Services) {
 	_authHandler := authHandler.NewHandler(services)
 
-	app.Post("/auth/register", _authHandler.Register())
-	app.Post("/auth/login", _authHandler.Login())
-	app.Post("/auth/logout", _authHandler.Logout())
+	app.Put("/auth", _authHandler.Register())
+	app.Post("/auth", _authHandler.Login())
+	app.Delete("/auth", _authHandler.Logout())
 }

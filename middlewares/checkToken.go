@@ -6,6 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	sharedApplication "github.com/ruxwez/go_hexagonal_template/core/_shared/application"
 	"github.com/ruxwez/go_hexagonal_template/core/_shared/domain/response"
+	authDomain "github.com/ruxwez/go_hexagonal_template/core/auth/domain"
 )
 
 func CheckToken(services *sharedApplication.Services) fiber.Handler {
@@ -19,7 +20,7 @@ func CheckToken(services *sharedApplication.Services) fiber.Handler {
 		// Validamos el token
 		if userId, err = services.AuthService.CheckToken(authToken); err != nil {
 			return c.Status(http.StatusUnauthorized).JSON(response.Error{
-				Error: err.Error(),
+				Error: authDomain.ErrInvalidToken.Error(),
 			})
 		}
 
