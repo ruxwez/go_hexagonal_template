@@ -4,6 +4,9 @@
         "usernamehw.errorlens",
         "pomdtr.excalidraw-editor",
         "golang.go",
-        "aaron-bond.better-comments"
+        "aaron-bond.better-comments",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql",
+        "mtxr.sqltools-driver-sqlite",
     ]
 }
